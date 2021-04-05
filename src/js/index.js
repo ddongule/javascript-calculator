@@ -57,7 +57,7 @@ function multiply(firstNumber, secondNumber) {
 }
 
 function divide(firstNumber, secondNumber) {
-  return Math.round(firstNumber / secondNumber);
+  return Math.floor(firstNumber / secondNumber);
 }
 
 function handleClickDigits() {
@@ -109,7 +109,7 @@ function handleClickAC() {
     state.storedNumber = "";
     state.operator = "";
 
-    displayNumber(0);
+    displayNumber("");
   });
 }
 
