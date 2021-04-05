@@ -28,6 +28,11 @@ const state = {
     3.5 displayNumber를 storedNumber에 저장한다.
 */
 
+/*
+  예외처리 
+  1. 0으로 나뉠 때 
+*/
+
 function setStoredNumber(newNumber) {
   state.storedNumber = newNumber;
 }
@@ -87,6 +92,13 @@ function handleClickOperation() {
     }
 
     if (state.operator === "/") {
+      if (userInputNumber === 0) {
+        resetState();
+        displayNumber("Error");
+
+        return;
+      }
+
       setStoredNumber(divide(Number(state.storedNumber), userInputNumber));
     }
 
@@ -103,12 +115,15 @@ function handleClickOperation() {
   });
 }
 
+function resetState() {
+  state.temporaryNumbers = [];
+  state.storedNumber = "";
+  state.operator = "";
+}
+
 function handleClickAC() {
   $(".modifiers").addEventListener("click", () => {
-    state.temporaryNumbers = [];
-    state.storedNumber = "";
-    state.operator = "";
-
+    resetState();
     displayNumber("");
   });
 }
