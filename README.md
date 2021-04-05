@@ -1,5 +1,8 @@
 <h2 align="middle">level1 - 자바스크립트 계산기</h2>
-<p align="middle">자바스크립트 계산기로 익혀보는 프론트엔드 테스트</p>
+<p align="middle">[복습] 자바스크립트 계산기로 익혀보는 프론트엔드 테스트</p>
+<p align="middle"><a href="https://github.com/woowacourse/javascript-calculator/pull/9">👉 해당 PR 바로가기</a></p>
+<p align="middle"><a href="https://github.surf/HyuuunjuKim/javascript-calculator/tree/HyuuunjuKim">👉 해당 Code Preview 바로가기</a></p>
+
 <p align="middle">
 <img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" alt="template version"/>
 <img src="https://img.shields.io/badge/language-html-blue.svg?style=flat-square"/>
@@ -46,6 +49,32 @@
 ## ✨ 추가한 기능
 
 - [x] 2개의 숫자의 연속 사칙 연산이 가능하다.
+
+## 🌊 코드의 흐름
+
+1. 유저가 숫자를 누른다.
+   1.1 숫자가 TemporaryNumbers에 저장된다.
+   1.2 TemporaryNumbers에 저장된 숫자 중 마지막 3개의 숫자를 join한다.
+   1.3 1.2의 숫자를 유저에게 보여준다.(displayNumber)
+
+2. 유저가 연산자를 누른다.
+   2.1 유저가 누른 연산자를 operator에 저장한다.
+   2.2 1.2을 storedNumber에 저장한다. (첫 번째 숫자)
+   2.3 TemporaryNumbers를 reset한다.
+
+3. 유저가 숫자를 누른다.
+   3.1 숫자가 TemporaryNumbers에 저장된다.
+   3.2 TemporaryNumbers에 저장된 숫자 중 마지막 3개의 숫자를 join한다.
+   3.3 3.2의 숫자를 유저에게 보여준다.(displayNumber)
+
+   3.4 storedNumber와 operator, displayNumber를 연산한다.
+   3.5 3.4에서 연산한 결과를 유저에게 보여준다.(displayNumber)
+   3.5 displayNumber를 storedNumber에 저장한다.
+
+번외) 예외처리
+
+1. 0으로 나눌 때
+2. 유저가 =을 연속적으로 누를 때
 
 ## 📝 License
 
